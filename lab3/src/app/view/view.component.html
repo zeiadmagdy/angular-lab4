@@ -1,0 +1,19 @@
+<div class="container-fluid d-flex flex-wrap justify-content-center">
+
+
+    <img [src]="productDetails.image" class="card-img-top " alt="{{ productDetails.title }}">
+    <hr>
+    <div class="card-body ">
+        <h5 class="card-title">{{ productDetails.title }}</h5>
+        <p class="card-text"><strong>Price: </strong>${{ productDetails.price }}</p>
+        <p class="card-text"><strong>Rating: </strong>{{ productDetails.rating.rate }} ({{
+            productDetails.rating.count }}
+            reviews)
+        </p>
+
+        <button class="btn btn-primary">Add to Cart</button>
+    </div>
+
+
+
+</div>

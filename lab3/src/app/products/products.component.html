@@ -1,0 +1,21 @@
+<div class="container-fluid d-flex flex-wrap justify-content-center">
+    <div class="card-group" style="width: 18rem;" *ngFor="let product of productsArray">
+        <div class="card">
+            <img [src]="product.image" class="card-img-top " alt="{{ product.title }}">
+            <div class="card-body ">
+                <h5 class="card-title">{{ product.title }}</h5>
+                <!-- <p class="card-text">{{ product.description }}</p> -->
+                <p class="card-text"><strong>Price: </strong>${{ product.price }}</p>
+                <p class="card-text"><strong>Rating: </strong>
+                    <span *ngFor="let i of [1,2,3,4,5]" [ngClass]="{'text-warning': i <= product.rating.rate}">
+                        <i class="fa-solid fa-star">*</i>
+                    </span>
+                    ({{ product.rating.count }} reviews)
+                </p>
+                <button class="btn btn-primary">Add to Cart</button>
+                <button (click)="viewProduct(product.id)" class="btn btn-info">view Product</button>
+            </div>
+        </div>
+    </div>
+
+</div>

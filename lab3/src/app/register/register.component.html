@@ -1,0 +1,42 @@
+<div class="container">
+    <form [formGroup]='registerForm' (ngSubmit)="registerSender()">
+
+        <div class="mb-3">
+            <label for="Name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="Name" name="Name" formControlName="Name"
+                placeholder="Enter Name">
+            <small
+                *ngIf="registerForm.controls['Name'].invalid && (registerForm.controls['Name'].dirty || registerForm.controls['Name'].touched)"
+                class="form-text text-danger">Please enter valid Name</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                formControlName="email" name="email" placeholder="Enter email">
+            <small
+                *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)"
+                class="form-text text-danger">Please enter valid Email</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" formControlName="username"
+                placeholder="Enter username">
+            <small
+                *ngIf="registerForm.controls['username'].invalid && (registerForm.controls['username'].dirty || registerForm.controls['username'].touched)"
+                class="form-text text-danger">Please enter valid username</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password"
+                formControlName="password">
+            <small
+                *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)"
+                class="form-text text-danger">Please enter valid Password</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Submit</button>
+    </form>
+</div>
